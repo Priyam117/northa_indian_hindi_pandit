@@ -277,6 +277,267 @@ dialog.lightbox p{margin:0;padding:.7rem 1rem}
   background: #f5ead7;
 }
 
+/* ===== Responsive Puja Video Section ===== */
+
+.video-section {
+  width: 100%;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background: #faf7f0;
+}
+
+.video-box {
+  width: 100%;
+  max-width: 850px;
+  padding: 25px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #eadfc9;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(65, 45, 20, 0.12);
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.video-box:hover {
+  box-shadow: 0 14px 40px rgba(65, 45, 20, 0.18);
+  transform: translateY(-3px);
+}
+
+.video-box h3 {
+  margin: 0 0 10px;
+  color: #7b351e;
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+.video-description {
+  margin: 0 0 22px;
+  color: #666666;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.video-wrapper {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #171717;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+}
+
+.video-wrapper video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+/* ===== Services Section Hover Effect ===== */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.service-grid li {
+  background: #ffffff;
+  border: 1px solid #eadfc9;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.service-grid li a {
+  display: block;
+  height: 100%;
+  padding: 24px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.service-grid li h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #7b351e;
+  transition: color 0.3s ease;
+}
+
+.service-grid li p {
+  margin-bottom: 0;
+  line-height: 1.7;
+  color: #555555;
+}
+
+/* Hover effect */
+
+.service-grid li:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 14px 28px rgba(80, 45, 15, 0.14);
+  border-color: #c69b52;
+}
+
+.service-grid li:hover h3 {
+  color: #b47722;
+}
+
+/* Keyboard accessibility */
+
+.service-grid li:focus-within {
+  outline: 2px solid #b47722;
+  outline-offset: 3px;
+}
+
+/* Scrolling Mantra Bar */
+.mantra-bar {
+  width: 100%;
+  overflow: hidden;
+  background: #5b211d;
+  color: #ffe7a0;
+  padding: 11px 0;
+  white-space: nowrap;
+  border-bottom: 2px solid #d5a447;
+  box-sizing: border-box;
+}
+
+.mantra-track {
+  display: flex;
+  width: max-content;
+  animation: mantra-scroll 55s linear infinite;
+}
+
+.mantra-track span {
+  flex-shrink: 0;
+  padding-right: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  line-height: 1.6;
+}
+
+/* Navbar ko scroll karne par top par fix rakhein */
+
+
+@keyframes mantra-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+  .mantra-bar {
+    padding: 9px 0;
+  }
+
+  .mantra-track span {
+    font-size: 14px;
+  }
+}
+
+/* Accessibility: stop animation when reduced motion is preferred */
+@media (prefers-reduced-motion: reduce) {
+  .mantra-track {
+    animation: none;
+  }
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 600px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .service-grid li a {
+    padding: 20px;
+  }
+}
+
+/* Respect reduced motion preference */
+
+@media (prefers-reduced-motion: reduce) {
+  .service-grid li,
+  .service-grid li h3 {
+    transition: none;
+  }
+
+  .service-grid li:hover {
+    transform: none;
+  }
+}
+
+/* ===== Tablet ===== */
+
+@media (max-width: 768px) {
+  .video-section {
+    padding: 35px 16px;
+  }
+
+  .video-box {
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .video-box h3 {
+    font-size: 24px;
+  }
+
+  .video-description {
+    font-size: 15px;
+  }
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 480px) {
+  .video-section {
+    padding: 25px 12px;
+  }
+
+  .video-box {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .video-box h3 {
+    font-size: 21px;
+  }
+
+  .video-description {
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+
+  .video-wrapper {
+    border-radius: 8px;
+  }
+
+  .video-box:hover {
+    transform: none;
+  }
+}
+
 @media (max-width: 768px) {
   .language-selector {
     align-self: flex-start;
